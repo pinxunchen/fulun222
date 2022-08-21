@@ -28,8 +28,9 @@ class MainActivity : AppCompatActivity(),MainAdapter.IItemClickListener {
 //        setContentView(R.layout.activity_main)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        initView()
 
+
+        initView()
         getUserData()
     }
 
@@ -46,7 +47,6 @@ class MainActivity : AppCompatActivity(),MainAdapter.IItemClickListener {
         binding.recyclerView.apply {
             layoutManager = viewManager
             adapter = viewAdapter
-
 
         }
     }

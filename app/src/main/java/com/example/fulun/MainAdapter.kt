@@ -31,11 +31,8 @@ class MainAdapter(private  val iItemClickListener: IItemClickListener):
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
 //        要拿的資料
         holder.itemViewBinding.tvName.text = userList[position].properties.name
-//        holder.itemViewBinding.tvIdentity.text = userList[position].properties.identity
-        holder.itemViewBinding.tvUseid.text = userList[position].properties.user_id
-//        holder.itemViewBinding.tvAddress.text = userList[position].properties.address
-//        holder.itemViewBinding.tvPhone.text = userList[position].properties.phone
-//        holder.itemViewBinding.tvAmount.text = userList[position].properties.amount
+        holder.itemViewBinding.tvUseId.text = userList[position].properties.user_id
+
 
         holder.itemViewBinding.layoutItem.setOnClickListener {
             iItemClickListener.onItemClickListener(userList[position])

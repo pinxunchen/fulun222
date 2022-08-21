@@ -154,16 +154,6 @@
                 app:layout_constraintLeft_toRightOf="@id/amount"
                 app:layout_constraintTop_toBottomOf="@id/tv_phone" />
 
-
-
-
-
-
-
-
-
-
-
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
