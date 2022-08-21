@@ -4,9 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Pin/AndroidStudioProjects/fulun/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/Pin/AndroidStudioProjects/fulun222/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.25462962962962965" />
         <entry key="..\:/Users/Pin/AndroidStudioProjects/fulun222/app/src/main/res/drawable/bg_user_name.xml" value="0.2" />
         <entry key="..\:/Users/Pin/AndroidStudioProjects/fulun222/app/src/main/res/drawable/bg_user_name_id.xml" value="0.18796296296296297" />
-        <entry key="..\:/Users/Pin/AndroidStudioProjects/fulun222/app/src/main/res/layout/activity_main.xml" value="0.13956433637284701" />
+        <entry key="..\:/Users/Pin/AndroidStudioProjects/fulun222/app/src/main/res/drawable/ic_launcher_background.xml" value="0.25462962962962965" />
+        <entry key="..\:/Users/Pin/AndroidStudioProjects/fulun222/app/src/main/res/drawable/searchvier_bg.xml" value="0.2928205128205128" />
+        <entry key="..\:/Users/Pin/AndroidStudioProjects/fulun222/app/src/main/res/drawable/searchview_bg.xml" value="0.2928205128205128" />
+        <entry key="..\:/Users/Pin/AndroidStudioProjects/fulun222/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/Pin/AndroidStudioProjects/fulun222/app/src/main/res/layout/activity_user_detail_main.xml" value="0.25" />
         <entry key="..\:/Users/Pin/AndroidStudioProjects/fulun222/app/src/main/res/layout/activity_user_detail_main2.xml" value="0.13956433637284701" />
         <entry key="..\:/Users/Pin/AndroidStudioProjects/fulun222/app/src/main/res/layout/item_view.xml" value="0.33" />

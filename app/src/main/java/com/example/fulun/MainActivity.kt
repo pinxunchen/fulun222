@@ -1,10 +1,12 @@
 package com.example.fulun
 
+import android.R
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.ArrayAdapter
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -13,6 +15,7 @@ import com.example.fulun.data.UserInfo
 import com.example.fulun.databinding.ActivityMainBinding
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.item_view.*
 import okhttp3.*
 import org.json.JSONArray
 import org.json.JSONObject
@@ -23,6 +26,7 @@ class MainActivity : AppCompatActivity(),MainAdapter.IItemClickListener {
     private lateinit var viewManager:RecyclerView.LayoutManager
     private lateinit var viewAdapter:MainAdapter
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 //        setContentView(R.layout.activity_main)
@@ -32,11 +36,8 @@ class MainActivity : AppCompatActivity(),MainAdapter.IItemClickListener {
 
         initView()
         getUserData()
+
     }
-
-
-
-
 
 
 
@@ -47,6 +48,8 @@ class MainActivity : AppCompatActivity(),MainAdapter.IItemClickListener {
         binding.recyclerView.apply {
             layoutManager = viewManager
             adapter = viewAdapter
+
+
 
         }
     }
@@ -72,7 +75,6 @@ class MainActivity : AppCompatActivity(),MainAdapter.IItemClickListener {
 
 
             override fun onResponse(call: okhttp3.Call , response: Response) {
-//                var propertiesName = StringBuilder()
                 val userData = response.body?.string()
 //              userData拿資料後轉gson          (資料來源,轉換成xx格式)
                 val userInfo = Gson().fromJson(userData,UserInfo::class.java)
