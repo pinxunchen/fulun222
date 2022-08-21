@@ -1,11 +1,14 @@
 package com.example.fulun
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.fulun.data.Feature
 import com.example.fulun.data.UserInfo
 import com.example.fulun.databinding.ActivityMainBinding
 import com.google.gson.Gson
@@ -15,7 +18,7 @@ import org.json.JSONArray
 import org.json.JSONObject
 import java.io.IOException
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(),MainAdapter.IItemClickListener {
     private lateinit var binding: ActivityMainBinding
     private lateinit var viewManager:RecyclerView.LayoutManager
     private lateinit var viewAdapter:MainAdapter
@@ -30,13 +33,20 @@ class MainActivity : AppCompatActivity() {
         getUserData()
     }
 
+
+
+
+
+
+
     private fun initView() {
          viewManager = LinearLayoutManager(this)
-         viewAdapter = MainAdapter()
+         viewAdapter = MainAdapter(this)
 
         binding.recyclerView.apply {
             layoutManager = viewManager
             adapter = viewAdapter
+
 
         }
     }
@@ -46,7 +56,7 @@ class MainActivity : AppCompatActivity() {
         binding.progressBar.visibility= View.VISIBLE
 
 //        okhttp設定
-        val userdataUrl="https://raw.githubusercontent.com/Pinnnnnnnn/crwon/main/user_data.json"
+        val userdataUrl="https://raw.githubusercontent.com/pinxunchen/crwon/main/user_data.json"
         val okHttpClient = OkHttpClient().newBuilder().build()
         val request =  Request.Builder().url(userdataUrl).get().build()
         val call = okHttpClient.newCall(request)
@@ -67,17 +77,18 @@ class MainActivity : AppCompatActivity() {
 //              userData拿資料後轉gson          (資料來源,轉換成xx格式)
                 val userInfo = Gson().fromJson(userData,UserInfo::class.java)
 
-//                for(i in userInfo.features){
-//                    propertiesName.append(i.properties.name + "     "+i.properties.address+"\n")
-//                }
                 runOnUiThread {
                     viewAdapter.userList = userInfo.features
-//                  binding.tvUserData.text = propertiesName
                     binding.progressBar.visibility = View.GONE
                 }
-
 
             }
         })
     }
- }
+
+    override fun onItemClickListener(data: Feature) {
+        val intent = Intent(this,UserDetailMainActivity::class.java)
+        intent.putExtra("data",data)
+        startActivity(intent)
+    }
+}

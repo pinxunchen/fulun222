@@ -4,6 +4,12 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Pin/AndroidStudioProjects/fulun/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/Pin/AndroidStudioProjects/fulun222/app/src/main/res/drawable/bg_user_name.xml" value="0.2" />
+        <entry key="..\:/Users/Pin/AndroidStudioProjects/fulun222/app/src/main/res/drawable/bg_user_name_id.xml" value="0.18796296296296297" />
+        <entry key="..\:/Users/Pin/AndroidStudioProjects/fulun222/app/src/main/res/layout/activity_main.xml" value="0.13956433637284701" />
+        <entry key="..\:/Users/Pin/AndroidStudioProjects/fulun222/app/src/main/res/layout/activity_user_detail_main.xml" value="0.25" />
+        <entry key="..\:/Users/Pin/AndroidStudioProjects/fulun222/app/src/main/res/layout/activity_user_detail_main2.xml" value="0.13956433637284701" />
+        <entry key="..\:/Users/Pin/AndroidStudioProjects/fulun222/app/src/main/res/layout/item_view.xml" value="0.33" />
         <entry key="..\:/Users/User/AndroidStudioProjects/fulun/app/src/main/res/layout/activity_main.xml" value="0.11548913043478261" />
         <entry key="..\:/Users/User/AndroidStudioProjects/fulun222/app/src/main/res/layout/activity_main.xml" value="0.13044579533941236" />
         <entry key="..\:/Users/User/AndroidStudioProjects/fulun222/app/src/main/res/layout/item_view.xml" value="0.22" />
@@ -15,5 +21,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.33" />
+      </ProjectState>
+    </option>
   </component>
 </project>

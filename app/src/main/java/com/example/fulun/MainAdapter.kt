@@ -6,13 +6,17 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.fulun.data.Feature
 import com.example.fulun.databinding.ItemViewBinding
 
-class MainAdapter:RecyclerView.Adapter<MainAdapter.MyViewHolder>(){
+class MainAdapter(private  val iItemClickListener: IItemClickListener):
+    RecyclerView.Adapter<MainAdapter.MyViewHolder>(){
 
     var userList:List<Feature> = emptyList()
         set(value) {
             field = value
             notifyDataSetChanged()
         }
+
+
+
 
     class MyViewHolder (val itemViewBinding:ItemViewBinding):
         RecyclerView.ViewHolder(itemViewBinding.root)
@@ -24,16 +28,31 @@ class MainAdapter:RecyclerView.Adapter<MainAdapter.MyViewHolder>(){
 
         return  MyViewHolder(itemViewBinding)
     }
-
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
 //        要拿的資料
         holder.itemViewBinding.tvName.text = userList[position].properties.name
-    }
+//        holder.itemViewBinding.tvIdentity.text = userList[position].properties.identity
+        holder.itemViewBinding.tvUseid.text = userList[position].properties.user_id
+//        holder.itemViewBinding.tvAddress.text = userList[position].properties.address
+//        holder.itemViewBinding.tvPhone.text = userList[position].properties.phone
+//        holder.itemViewBinding.tvAmount.text = userList[position].properties.amount
 
+        holder.itemViewBinding.layoutItem.setOnClickListener {
+            iItemClickListener.onItemClickListener(userList[position])
+        }
+
+    }
     override fun getItemCount(): Int {
         return userList.size
+    }
+
+    interface IItemClickListener{
+        fun onItemClickListener(data:Feature)
 
     }
+
+
+
 
 
 
